@@ -23,7 +23,7 @@ public class PacienteService {
 
     public PacienteDTO buscarPorId(Long id) {
         Paciente paciente = repository.findById(id)
-                .orElseThrow(() -> new RuntimeException("O paciente não foi encontrado")));
+                .orElseThrow(() -> new RuntimeException("O paciente não foi encontrado"));
 
         return PacienteDTO.fromEntity(paciente);
     }
