@@ -1,30 +1,22 @@
 package br.edu.infnet.hospital_api.controllers;
 
-import br.edu.infnet.hospital_api.dto.MedicoDTO;
-import br.edu.infnet.hospital_api.services.MedicoService;
+import br.edu.infnet.hospital_api.dto.ConsultaDTO;
+import br.edu.infnet.hospital_api.services.ConsultaService;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
-
 @RestController
-@RequestMapping("/medicos")
-public class MedicoController {
+@RequestMapping("/consultas")
+public class ConsultaController {
 
     @Autowired
-    private MedicoService service;
+    private ConsultaService service;
 
     @PostMapping
-    public MedicoDTO cadastrar(@RequestBody MedicoDTO dto) {
+    public ConsultaDTO cadastrar(@RequestBody ConsultaDTO dto) {
         return service.salvar(dto);
-    }
-
-    @GetMapping
-    public List<MedicoDTO> listar() {
-        return service.listar();
     }
 }
