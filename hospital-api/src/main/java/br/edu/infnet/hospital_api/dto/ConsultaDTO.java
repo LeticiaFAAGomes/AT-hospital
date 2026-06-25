@@ -1,6 +1,7 @@
 package br.edu.infnet.hospital_api.dto;
 
 import br.edu.infnet.hospital_api.models.Consulta;
+import br.edu.infnet.hospital_api.models.Paciente;
 import lombok.Data;
 
 import java.time.LocalDateTime;
