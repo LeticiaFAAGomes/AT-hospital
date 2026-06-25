@@ -7,11 +7,13 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.util.List;
 
+@Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
+@Table(name = "pacientes")
 public class Paciente {
 
     @Id
@@ -29,4 +31,7 @@ public class Paciente {
     private LocalDate dataNascimento;
 
     private String telefone;
+
+    @OneToMany(mappedBy = "paciente")
+    private List<Consulta> consultas;
 }
