@@ -4,10 +4,8 @@ import br.edu.infnet.hospital_api.dto.MedicoDTO;
 import br.edu.infnet.hospital_api.services.MedicoService;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -19,11 +17,13 @@ public class MedicoController {
     private MedicoService service;
 
     @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
     public MedicoDTO cadastrar(@RequestBody MedicoDTO dto) {
         return service.salvar(dto);
     }
 
     @GetMapping
+    @ResponseStatus(HttpStatus.OK)
     public List<MedicoDTO> listar() {
         return service.listar();
     }
