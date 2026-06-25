@@ -27,4 +27,11 @@ public class MedicoService {
                 .map(MedicoDTO::fromEntity)
                 .collect(Collectors.toList());
     }
+
+    public List<MedicoDTO> listarPorQtdConsultas() {
+        return repository.findMedicosOrdenadosPorQtdConsulta()
+                .stream()
+                .map(MedicoDTO::fromEntity)
+                .toList();
+    }
 }

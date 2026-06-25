@@ -27,4 +27,10 @@ public class MedicoController {
     public List<MedicoDTO> listar() {
         return service.listar();
     }
+
+    @GetMapping("/consultas-ordenadas")
+    @ResponseStatus(HttpStatus.OK)
+    public List<MedicoDTO> listarConsultasOrdenadas() {
+        return service.listarPorQtdConsultas();
+    }
 }
