@@ -2,6 +2,7 @@ package br.edu.infnet.hospital_api.models;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -27,7 +28,7 @@ public class Paciente {
     @Column(unique = true)
     private String cpf;
 
-    @NotBlank(message = "A data de nascimento é um dado obrigatório")
+    @NotNull
     private LocalDate dataNascimento;
 
     private String telefone;
